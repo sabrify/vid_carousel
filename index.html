@@ -230,12 +230,13 @@
     </div>
 </div>
     <script>
-// Duplicate the first two items and append them to the end for infinite effect
-const cloneCount = 10; // Number of items to clone
+// Duplicate the first items and append them to the end
+const cloneCount = 10; // Number of items to clone 
 const videoCarousel = document.querySelector('.video_carousel');
 const items = document.querySelectorAll('.item_container');
 
 // Clone the first two items and append them to the carousel
+// Optional: To clone the exact amount of videos use items.lengh instead of the number of items to clone inside the loop
 for (let i = 0; i < cloneCount; i++) {
     const clone = items[i].cloneNode(true);
     videoCarousel.appendChild(clone);
@@ -244,7 +245,7 @@ for (let i = 0; i < cloneCount; i++) {
 // Update itemContainers to include cloned items
 const itemContainers = document.querySelectorAll('.item_container');
 
-// Center the third video initially (index 3)
+// Center the fourth video initially (first initial index is 4 and increment by 8 for the ones to come)
 const initialIndex = 12;
 const initialOffset = -initialIndex * (316 + 16); // item width + gap
 itemContainers.forEach((container) => {
@@ -275,12 +276,13 @@ itemContainers.forEach((container, index) => {
             v.pause();
         });
 
-        // Play the clicked video
+        
         video.play();
     });
 });
 
 // Reset carousel when clicking outside
+// Will be removing this later 
 document.addEventListener('click', (event) => {
     if (![...itemContainers].some(c => c.contains(event.target))) {
         itemContainers.forEach((container) => {
@@ -294,7 +296,6 @@ document.addEventListener('click', (event) => {
         itemContainers[initialIndex].querySelector('.carousel-video').play();
     }
 });
-
 
     </script>
 </body>
