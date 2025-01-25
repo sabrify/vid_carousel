@@ -10,7 +10,7 @@
             justify-content: flex-start;
             flex-direction: row;
             align-items: center;
-            gap: 16px;
+            
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -230,42 +230,38 @@
     </div>
 </div>
     <script>
-// Function to duplicate and append carousel items to the end
-function duplicateCarouselItems() {
-    const videoCarousel = document.querySelector('.video_carousel');
-    const items = document.querySelectorAll('.item_container');
-    const cloneCount = 1; // Number of items to clone
-
-    // Clone the last item and append it to the end
-    const clone = items[items.length - 1].cloneNode(true);
-    videoCarousel.appendChild(clone);
-}
-
-// Existing code for the carousel
+// Duplicate the first two items and append them to the end for infinite effect
+const cloneCount = 10; // Number of items to clone
 const videoCarousel = document.querySelector('.video_carousel');
 const items = document.querySelectorAll('.item_container');
 
+// Clone the first two items and append them to the carousel
+for (let i = 0; i < cloneCount; i++) {
+    const clone = items[i].cloneNode(true);
+    videoCarousel.appendChild(clone);
+}
+
+// Update itemContainers to include cloned items
+const itemContainers = document.querySelectorAll('.item_container');
+
 // Center the third video initially (index 3)
-const initialIndex = 3;
+const initialIndex = 12;
 const initialOffset = -initialIndex * (316 + 16); // item width + gap
-items.forEach((container) => {
+itemContainers.forEach((container) => {
     container.style.transform = `translateX(${initialOffset}px)`;
 });
 
 // Add active class to third video
-items[initialIndex].classList.add('isActive');
+itemContainers[initialIndex].classList.add('isActive');
 // Play the third video
-items[initialIndex].querySelector('.carousel-video').play();
+itemContainers[initialIndex].querySelector('.carousel-video').play();
 
-items.forEach((container, index) => {
+itemContainers.forEach((container, index) => {
     const video = container.querySelector('.carousel-video');
 
     container.addEventListener('click', () => {
-        // Duplicate items and append to the end
-        duplicateCarouselItems();
-
         // Remove active class from all containers
-        items.forEach(c => c.classList.remove('isActive'));
+        itemContainers.forEach(c => c.classList.remove('isActive'));
         
         // Add active class to clicked container
         container.classList.add('isActive');
@@ -273,7 +269,7 @@ items.forEach((container, index) => {
         // Calculate the offset to center the clicked item
         const offset = -index * (316 + 16); // item width + gap
         
-        items.forEach((c) => {
+        itemContainers.forEach((c) => {
             c.style.transform = `translateX(${offset}px)`;
             const v = c.querySelector('.carousel-video');
             v.pause();
@@ -286,16 +282,16 @@ items.forEach((container, index) => {
 
 // Reset carousel when clicking outside
 document.addEventListener('click', (event) => {
-    if (![...items].some(c => c.contains(event.target))) {
-        items.forEach((container) => {
+    if (![...itemContainers].some(c => c.contains(event.target))) {
+        itemContainers.forEach((container) => {
             container.classList.remove('isActive');
             container.querySelector('.carousel-video').pause();
             // Reset to third video position instead of 0
             container.style.transform = `translateX(${initialOffset}px)`;
         });
         // Re-activate third video
-        items[initialIndex].classList.add('isActive');
-        items[initialIndex].querySelector('.carousel-video').play();
+        itemContainers[initialIndex].classList.add('isActive');
+        itemContainers[initialIndex].querySelector('.carousel-video').play();
     }
 });
 
