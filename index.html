@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenty Carousel</title>
+    <style>
+        .video_carousel {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding-left: 50%;
+            transform: translateX(-158px);
+        }
+        body::-webkit-scrollbar {
+  display: none;
+}
+
+        .item_container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 316px;
+            height: 100%;
+            padding: 8px;
+            flex-shrink: 0;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+            transform: translateX(0);
+            overflow-x: hidden;
+        }
+
+        .video_item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 595px;
+            transition: transform 0.5s, height 0.5s;
+            gap: 5px;
+            border-radius: 10px;
+        }
+
+        .video_item .carousel-video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: border-radius 0.5s;
+        }
+
+        .item_container:not(.isActive) {
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+
+        .item_container.isActive {
+            z-index: 1;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .video_item.isActive .carousel-video {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-section" >
+
+    
+    <div class="video_carousel" style="height: 690px;">
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <!-- Repeat for other items -->
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        <div class="item_container">
+            <div class="video_item">
+                <video 
+                    poster="https://cdn.shopify.com/s/files/1/0341/3458/9485/files/preview_images/721107d396534ff9a3b2847394ab11a7.thumbnail.0000000000.jpg?v=1731717384&amp;width=320" 
+                    class="carousel-video" 
+                    src="https://cdn.shopify.com/videos/c/vp/721107d396534ff9a3b2847394ab11a7/721107d396534ff9a3b2847394ab11a7.HD-720p-1.6Mbps-38178158.mp4" 
+                    preload="auto" 
+                    loop 
+                    muted 
+                    playsinline 
+                    crossorigin="anonymous">
+                </video>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</div>
+    <script>
+// Function to duplicate and append carousel items to the end
+function duplicateCarouselItems() {
+    const videoCarousel = document.querySelector('.video_carousel');
+    const items = document.querySelectorAll('.item_container');
+    const cloneCount = 1; // Number of items to clone
+
+    // Clone the last item and append it to the end
+    const clone = items[items.length - 1].cloneNode(true);
+    videoCarousel.appendChild(clone);
+}
+
+// Existing code for the carousel
+const videoCarousel = document.querySelector('.video_carousel');
+const items = document.querySelectorAll('.item_container');
+
+// Center the third video initially (index 3)
+const initialIndex = 3;
+const initialOffset = -initialIndex * (316 + 16); // item width + gap
+items.forEach((container) => {
+    container.style.transform = `translateX(${initialOffset}px)`;
+});
+
+// Add active class to third video
+items[initialIndex].classList.add('isActive');
+// Play the third video
+items[initialIndex].querySelector('.carousel-video').play();
+
+items.forEach((container, index) => {
+    const video = container.querySelector('.carousel-video');
+
+    container.addEventListener('click', () => {
+        // Duplicate items and append to the end
+        duplicateCarouselItems();
+
+        // Remove active class from all containers
+        items.forEach(c => c.classList.remove('isActive'));
+        
+        // Add active class to clicked container
+        container.classList.add('isActive');
+
+        // Calculate the offset to center the clicked item
+        const offset = -index * (316 + 16); // item width + gap
+        
+        items.forEach((c) => {
+            c.style.transform = `translateX(${offset}px)`;
+            const v = c.querySelector('.carousel-video');
+            v.pause();
+        });
+
+        // Play the clicked video
+        video.play();
+    });
+});
+
+// Reset carousel when clicking outside
+document.addEventListener('click', (event) => {
+    if (![...items].some(c => c.contains(event.target))) {
+        items.forEach((container) => {
+            container.classList.remove('isActive');
+            container.querySelector('.carousel-video').pause();
+            // Reset to third video position instead of 0
+            container.style.transform = `translateX(${initialOffset}px)`;
+        });
+        // Re-activate third video
+        items[initialIndex].classList.add('isActive');
+        items[initialIndex].querySelector('.carousel-video').play();
+    }
+});
+
+
+    </script>
+</body>
+</html>
+
